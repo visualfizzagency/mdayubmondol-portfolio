@@ -1,0 +1,35 @@
+rules_version = '2';
+
+// ═════════════════════════════════════════════════════════════
+//  ⚠️  ADMIN UID — THE ONLY PLACE YOU NEED TO EDIT  ⚠️
+//
+//  In the ADMIN_UID() function just below, replace the text
+//    REPLACE THIS WITH YOUR ADMIN UID FROM FIREBASE AUTH
+//  with the admin user's UID (Firebase console → Authentication →
+//  Users → "User UID"). Keep the quotes.
+//
+//  Until you do, NOBODY can upload or delete (the placeholder
+//  matches no user). Public read works regardless.
+//
+//  Publish: Firebase console → Storage → Rules → Publish.
+// ═════════════════════════════════════════════════════════════
+service firebase.storage {
+
+  // ── ADMIN_UID: the one constant. Edit the string below. ──
+  function ADMIN_UID() {
+    return "REPLACE THIS WITH YOUR ADMIN UID FROM FIREBASE AUTH";
+  }
+
+  match /b/{bucket}/o {
+
+    // Applies to every file in the bucket.
+    match /{allPaths=**} {
+
+      // Public read: anyone can view/download files.
+      allow read: if true;
+
+      // Admin-only write: only the signed-in admin can upload, replace or delete.
+      allow write: if request.auth != null && request.auth.uid == ADMIN_UID();
+    }
+  }
+}

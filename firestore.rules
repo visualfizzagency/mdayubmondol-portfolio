@@ -1,0 +1,77 @@
+rules_version = '2';
+
+// ═════════════════════════════════════════════════════════════
+//  ⚠️  ADMIN UID — THE ONLY PLACE YOU NEED TO EDIT  ⚠️
+//
+//  In the ADMIN_UID() function just below, replace the text
+//    REPLACE THIS WITH YOUR ADMIN UID FROM FIREBASE AUTH
+//  with the admin user's UID (Firebase console → Authentication →
+//  Users → "User UID"). Keep the quotes.
+//
+//  Until you do, NOBODY can write (the placeholder matches no user).
+//
+//  Publish: Firebase console → Firestore Database → Rules → Publish.
+// ═════════════════════════════════════════════════════════════
+service cloud.firestore {
+
+  // ── ADMIN_UID: the one constant. Edit the string below. ──
+  function ADMIN_UID() {
+    return "REPLACE THIS WITH YOUR ADMIN UID FROM FIREBASE AUTH";
+  }
+
+  match /databases/{database}/documents {
+
+    // True only for the signed-in admin account.
+    function isAdmin() {
+      return request.auth != null && request.auth.uid == ADMIN_UID();
+    }
+
+    // Validates a contact-form submission (fields sent by app/contact/page.js:
+    // name, email, message, createdAt). Update this if the form changes.
+    function isValidContactMessage() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['name', 'email', 'message', 'createdAt'])
+          && d.name is string
+          && d.name.size() > 0 && d.name.size() <= 100
+          && d.email is string
+          && d.email.size() <= 254
+          && d.email.matches('.+@.+\\..+')
+          && d.message is string
+          && d.message.size() >= 10 && d.message.size() <= 2000
+          && d.createdAt == request.time;
+    }
+
+    // ── Projects: public read, admin-only write.
+    match /projects/{projectId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ── Blog posts: public read, admin-only write.
+    //    "posts" is what the admin page writes to; "blog_posts" is read first
+    //    by lib/data.js. Both are covered.
+    match /posts/{postId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /blog_posts/{postId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ── Contact messages:
+    //    • Anyone may CREATE one (the public contact form), if it is valid.
+    //    • The public can NOT read, update or delete them — they contain
+    //      visitors' names and email addresses.
+    //    • Only the admin can read, update or delete (used by /admin/messages).
+    match /contact_messages/{messageId} {
+      allow create: if isValidContactMessage();
+      allow read, update, delete: if isAdmin();
+    }
+
+    // ── Everything else is denied by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
