@@ -69,6 +69,11 @@
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-navy-700 hover:shadow-lg hover:shadow-navy/25;
   }
 
+  /* Solid sky button for dark sections — navy text on sky */
+  .btn-sky {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-sky px-7 py-3.5 text-sm font-semibold text-navy-900 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-lg hover:shadow-sky/25;
+  }
+
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy px-7 py-3 text-sm font-semibold text-navy transition duration-300 hover:-translate-y-0.5 hover:bg-navy hover:text-white;
   }
@@ -85,6 +90,12 @@
   /* sky-600 keeps contrast on white; use `!text-sky` (or text-sky) on navy */
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.22em] text-sky-600 md:text-sm;
+    font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  /* Monospace label — data, tags, stats (JetBrains Mono via next/font) */
+  .mono {
+    font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, monospace;
   }
 
   .display {
@@ -95,5 +106,72 @@
 
   .card-hover {
     @apply transition duration-300 hover:-translate-y-1.5 hover:border-sky hover:shadow-2xl hover:shadow-navy/15;
+  }
+
+  /* Outlined display text (hero name treatment) */
+  .text-stroke {
+    -webkit-text-stroke: 1.5px var(--sky);
+    color: transparent;
+  }
+
+  /* ───────── Motion (transform + opacity only, 60fps) ───────── */
+  .animate-fade-up {
+    animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+
+  .marquee-pause:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  .animate-pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* Respect reduced-motion: no kinetic type, no marquee, no pulses */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-marquee,
+  .animate-pulse-dot {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }

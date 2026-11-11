@@ -13,6 +13,11 @@ const nextConfig = {
         hostname: '**.behance.net',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'mdayubmondol.com',
+        pathname: '/wp-content/uploads/**',
+      },
     ],
   },
 };

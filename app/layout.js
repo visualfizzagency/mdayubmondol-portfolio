@@ -1,4 +1,5 @@
-import { Inter, Inter_Tight } from 'next/font/google';
+import { Inter, Inter_Tight, JetBrains_Mono } from 'next/font/google';
+import Image from 'next/image';
 import './globals.css';
 
 const inter = Inter({
@@ -13,10 +14,19 @@ const interTight = Inter_Tight({
   display: 'swap',
 });
 
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
 export const metadata = {
   title: 'Md Ayub Mondol — Graphic Designer & AI Artist',
   description:
     'Md Ayub Mondol is a Sr. Visualizer in Dhaka, Bangladesh with 7+ years of experience in brand identity, AI art, UI/UX, motion graphics and digital marketing.',
+  icons: {
+    icon: '/favicon.svg',
+  },
   openGraph: {
     title: 'Md Ayub Mondol — Graphic Designer & AI Artist',
     description:
@@ -41,16 +51,21 @@ const navLinks = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${interTight.variable}`}>
-        {/* ───────── NAV ───────── */}
-        <header className="sticky top-0 z-50 border-b border-navy/10 bg-white/80 backdrop-blur-md">
+      <body
+        className={`${inter.variable} ${interTight.variable} ${jetBrainsMono.variable}`}
+      >
+        {/* ───────── NAV (dark) ───────── */}
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-900/90 backdrop-blur-md">
           <div className="container-x flex h-16 items-center justify-between md:h-20">
-            <a
-              href="/"
-              className="display text-2xl font-extrabold tracking-tight text-navy"
-              aria-label="Ayub — home"
-            >
-              AYUB<span className="text-sky">.</span>
+            <a href="/" aria-label="Md Ayub Mondol — home" className="shrink-0">
+              <Image
+                src="/images/logo.png"
+                alt="Md Ayub Mondol"
+                width={368}
+                height={115}
+                priority
+                className="h-9 w-auto md:h-10"
+              />
             </a>
 
             {/* Desktop links */}
@@ -59,21 +74,21 @@ export default function RootLayout({ children }) {
                 <a
                   key={l.label}
                   href={l.href}
-                  className="text-sm font-medium text-navy-900/80 transition-colors hover:text-sky-600"
+                  className="text-sm font-medium text-white/80 transition-colors hover:text-sky"
                 >
                   {l.label}
                 </a>
               ))}
             </nav>
 
-            <a href={`mailto:${EMAIL}`} className="btn-primary hidden md:inline-flex">
+            <a href={`mailto:${EMAIL}`} className="btn-sky hidden !py-2.5 md:inline-flex">
               Contact
             </a>
 
             {/* Mobile menu (no JS needed) */}
             <details className="group md:hidden">
               <summary
-                className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full border border-navy/15 text-navy [&::-webkit-details-marker]:hidden"
+                className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full border border-white/20 text-white [&::-webkit-details-marker]:hidden"
                 aria-label="Toggle menu"
               >
                 <svg
@@ -97,19 +112,19 @@ export default function RootLayout({ children }) {
                   <path d="M6 6l12 12M18 6L6 18" />
                 </svg>
               </summary>
-              <div className="absolute inset-x-0 top-full border-b border-navy/10 bg-white px-5 pb-6 pt-2 shadow-xl shadow-navy/10">
+              <div className="absolute inset-x-0 top-full border-b border-white/10 bg-navy-900 px-5 pb-6 pt-2 shadow-xl shadow-navy-900/50">
                 <nav className="flex flex-col" aria-label="Mobile">
                   {navLinks.map((l) => (
                     <a
                       key={l.label}
                       href={l.href}
-                      className="display border-b border-navy/10 py-4 text-2xl font-bold text-navy"
+                      className="display border-b border-white/10 py-4 text-2xl font-bold text-white"
                     >
                       {l.label}
                     </a>
                   ))}
                 </nav>
-                <a href={`mailto:${EMAIL}`} className="btn-primary mt-6 w-full">
+                <a href={`mailto:${EMAIL}`} className="btn-sky mt-6 w-full">
                   Email me
                 </a>
               </div>
@@ -124,7 +139,15 @@ export default function RootLayout({ children }) {
           <div className="container-x py-16 md:py-24">
             <div className="grid gap-12 md:grid-cols-12">
               <div className="md:col-span-6">
-                <p className="eyebrow !text-sky">Available for projects</p>
+                <Image
+                  src="/images/logo.png"
+                  alt="Md Ayub Mondol"
+                  width={368}
+                  height={115}
+                  loading="lazy"
+                  className="h-10 w-auto"
+                />
+                <p className="eyebrow mt-8 !text-sky">Available for projects</p>
                 <p className="display mt-4 text-4xl font-extrabold md:text-6xl">
                   Md Ayub Mondol
                 </p>

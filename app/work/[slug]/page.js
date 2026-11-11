@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProjects, getProject } from '../../../lib/data';
@@ -191,23 +192,48 @@ export default async function ProjectPage({ params }) {
               <dd className="mt-2 text-lg font-semibold text-navy">{project.year}</dd>
             </div>
           </dl>
+
+          {project.behanceUrl ? (
+            <div className="mt-8">
+              <a
+                href={project.behanceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                View on Behance ↗
+              </a>
+            </div>
+          ) : null}
         </div>
       </section>
 
-      {/* ───────── GALLERY PLACEHOLDER ───────── */}
+      {/* ───────── COVER + GALLERY ───────── */}
       <section className="pb-16 md:pb-24">
         <div className="container-x">
           <div className="grid gap-4 md:grid-cols-6 md:gap-6">
-            {galleryBlocks.map((b, i) => (
+            {project.cover ? (
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl md:col-span-6">
+                <Image
+                  src={project.cover}
+                  alt={project.title}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 1200px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
+            {galleryBlocks.slice(project.cover ? 1 : 0).map((b, i) => (
               <div
                 key={i}
                 className={`relative flex w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br ${b.tone} ${b.ratio} ${b.span}`}
               >
                 <span className="display absolute left-5 top-3 text-5xl text-white/20">
-                  {String(i + 1).padStart(2, '0')}
+                  {String(i + 2).padStart(2, '0')}
                 </span>
                 <span className="px-6 text-center text-xs text-white/70">
-                  Gallery placeholder — project visual {i + 1}
+                  Gallery placeholder — project visual {i + 2}
                 </span>
               </div>
             ))}
@@ -222,7 +248,12 @@ export default async function ProjectPage({ params }) {
             <div className="lg:col-span-6">
               <p className="eyebrow">Overview</p>
               <h2 className="mt-4 text-4xl md:text-5xl">About the project.</h2>
-              <p className="mt-6 text-base leading-relaxed text-navy-900/75 md:text-lg">
+              {project.description ? (
+                <p className="mt-6 text-base leading-relaxed text-navy-900/75 md:text-lg">
+                  {project.description}
+                </p>
+              ) : null}
+              <p className="mt-4 text-base leading-relaxed text-navy-900/75 md:text-lg">
                 {project.title} is a {project.category.toLowerCase()} project designed by Md
                 Ayub Mondol in {project.year}.
               </p>

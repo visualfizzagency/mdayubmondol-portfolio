@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
@@ -6,46 +7,53 @@ export const metadata = {
     'Md Ayub Mondol is a graphic designer and AI artist from Dhaka, Bangladesh. Sr. Visualizer at Edison Group (Symphony, Helio) with 7+ years of experience.',
 };
 
+const EMAIL = 'hellomdayub@gmail.com';
+const PHONE = '01886588884';
+
+// Real experience timeline from mdayubmondol.com.
 const experience = [
-  {
-    period: '2026 — Present',
-    role: 'Sr. Visualizer',
-    company: 'Edison Group',
-    note: 'Symphony, Helio',
-  },
-  {
-    period: '2023 — 2026',
-    role: 'Senior Graphic Designer',
-    company: 'NexGen Global Group',
-    note: '',
-  },
+  { period: '2026 — Present', role: 'Sr. Visualizer', company: 'Edison Group', note: 'Symphony, Helio' },
+  { period: '2023 — 2026', role: 'Sr. Visualizer', company: 'NexGen Global Group', note: '' },
+  { period: '2022 — 2023', role: 'Visualizer', company: 'AKS Pharmacy', note: '' },
+  { period: '2020 — 2022', role: 'Visualizer', company: 'DX360', note: '' },
+  { period: '2019 — 2020', role: 'Graphics Designer', company: 'Honda Life', note: '' },
 ];
 
-const earlier = ['AKS Pharmacy', 'DX360', 'Honda Life'];
+// Real focus areas from mdayubmondol.com.
+const focusAreas = [
+  'Brand Identity & Design',
+  'AI Art & Visual Creation',
+  'Creative Direction & AI Video',
+  'Motion Graphics & Video Editing',
+];
 
+// Real services from mdayubmondol.com.
 const services = [
-  'Logo & Brand Identity',
-  'Social Media Design',
-  'AI Video & Motion Design',
-  'Graphic Design & Print',
-  'Web & UI Design',
-  'Free Resources & Courses',
+  { title: 'Brand Identity Design', text: 'Building memorable and distinctive brand identities.' },
+  { title: 'AI-Powered Creative', text: 'Transforming ideas into AI-generated visuals.' },
+  { title: 'Graphic Design', text: 'Creative visuals that communicate your brand.' },
+  { title: 'Motion Graphics Design', text: 'Dynamic storytelling through motion graphics.' },
+  { title: 'Video Editing & Production', text: 'Engaging videos crafted for digital platforms.' },
+  { title: 'AI Video Production', text: 'Bringing creative concepts to life with AI.' },
 ];
 
+// Real skills from mdayubmondol.com.
 const tools = [
   'Photoshop',
   'Illustrator',
   'After Effects',
   'Premiere Pro',
   'CapCut',
+  'Prompt Design',
   'Figma',
+  'AI Tools',
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* ───────── HERO ───────── */}
-      <section className="relative overflow-hidden">
+      {/* ───────── HERO (dark) ───────── */}
+      <section className="relative overflow-hidden bg-navy-900 text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-sky/20 blur-3xl"
@@ -53,41 +61,68 @@ export default function AboutPage() {
         <div className="container-x relative pb-16 pt-14 md:pb-24 md:pt-20 lg:pt-28">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-7">
-              <p className="eyebrow">About — Dhaka, Bangladesh</p>
-              <h1 className="mt-6">
-                Designer, visualizer &amp; <span className="text-sky-500">AI artist.</span>
+              <p className="eyebrow !text-sky">About me — Dhaka, Bangladesh</p>
+              <h1 className="mt-6 !text-white">
+                Creative Ideas. <span className="text-sky">Powerful Visual Solutions.</span>
               </h1>
-              <p className="mt-8 max-w-xl text-base leading-relaxed text-navy-900/75 md:text-lg">
-                I’m Md Ayub Mondol, a graphic designer and AI artist based in Dhaka. I’m
-                currently a Sr. Visualizer at Edison Group (Symphony, Helio), with 7+ years of
-                experience turning ideas into clear, bold visuals.
+              <p className="mt-8 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+                With 7+ years of experience in the creative industry, I help brands bring
+                their ideas to life through impactful design and innovative visual
+                storytelling. From building distinctive brand identities to creating
+                AI-powered visuals, motion graphics, and engaging video content, I combine
+                creativity and technology to deliver meaningful results.
               </p>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-navy-900/75 md:text-lg">
-                Beyond client work, I share free resources, design courses and AI prompt guides
-                on the blog.
-              </p>
+              <ul className="mt-8 grid max-w-xl gap-3 sm:grid-cols-2">
+                {focusAreas.map((f) => (
+                  <li key={f} className="flex items-center gap-3 text-white/85">
+                    <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-sky" />
+                    <span className="font-medium">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-10 flex flex-col gap-2 text-white/80 sm:flex-row sm:gap-10">
+                <p>
+                  <span className="mono text-xs uppercase tracking-[0.18em] text-white/50">
+                    Email Us
+                  </span>
+                  <br />
+                  <a href={`mailto:${EMAIL}`} className="font-semibold text-white transition-colors hover:text-sky">
+                    {EMAIL}
+                  </a>
+                </p>
+                <p>
+                  <span className="mono text-xs uppercase tracking-[0.18em] text-white/50">
+                    Make A Call
+                  </span>
+                  <br />
+                  <a href={`tel:${PHONE}`} className="font-semibold text-white transition-colors hover:text-sky">
+                    +880 18865 88884
+                  </a>
+                </p>
+              </div>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Link href="/work" className="btn-primary">
+                <Link href="/work" className="btn-sky">
                   View Work
                 </Link>
-                <Link href="/contact" className="btn-outline">
+                <Link href="/contact" className="btn-outline-light">
                   Get in Touch
                 </Link>
               </div>
             </div>
 
             <div className="mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none">
-              <div className="relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy via-navy-600 to-sky-600 shadow-2xl shadow-navy/30">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-b-[2.5rem] rounded-t-[999px] border border-white/10 bg-gradient-to-b from-navy-700 via-navy-800 to-navy-900 shadow-2xl shadow-black/40">
                 <div
                   aria-hidden="true"
                   className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sky/30 blur-2xl"
                 />
-                <span className="display relative text-[7rem] font-extrabold text-white/90 md:text-[9rem]">
-                  AM
-                </span>
-                <p className="absolute inset-x-6 bottom-6 text-center text-xs text-white/70">
-                  Portrait placeholder — replace with /public/images/portrait.jpg
-                </p>
+                <Image
+                  src="/images/portrait-cutout.png"
+                  alt="Md Ayub Mondol — portrait, background removed"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, (min-width: 640px) 384px, 90vw"
+                  className="object-contain object-bottom"
+                />
               </div>
             </div>
           </div>
@@ -99,8 +134,12 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="eyebrow">Experience</p>
-              <h2 className="mt-4">7+ years of craft.</h2>
+              <p className="eyebrow">My Resume</p>
+              <h2 className="mt-4">Real Creative Experience.</h2>
+              <p className="mt-6 max-w-sm text-navy-900/70">
+                7+ years across agencies and brands — from graphics design to senior
+                visualisation and AI-powered creative.
+              </p>
             </div>
 
             <div className="lg:col-span-8">
@@ -119,20 +158,6 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ol>
-
-              <div className="mt-8 rounded-3xl border border-navy/10 bg-white p-7 md:p-8">
-                <p className="eyebrow">Earlier experience</p>
-                <p className="mt-4 text-navy-900/75">
-                  Previous work with{' '}
-                  {earlier.map((c, i) => (
-                    <span key={c}>
-                      <span className="font-semibold text-navy">{c}</span>
-                      {i < earlier.length - 2 ? ', ' : i === earlier.length - 2 ? ' and ' : ''}
-                    </span>
-                  ))}
-                  .
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -154,13 +179,14 @@ export default function AboutPage() {
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:mt-16">
             {services.map((s, i) => (
               <li
-                key={s}
-                className="card-hover flex items-center gap-4 rounded-2xl border border-navy/10 bg-white p-5 md:p-6"
+                key={s.title}
+                className="card-hover rounded-2xl border border-navy/10 bg-white p-6 md:p-7"
               >
                 <span className="display text-sm font-bold text-sky-600">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <span className="display text-lg font-bold text-navy md:text-xl">{s}</span>
+                <h3 className="mt-4">{s.title}</h3>
+                <p className="mt-2 text-navy-900/70">{s.text}</p>
               </li>
             ))}
           </ul>
@@ -180,8 +206,8 @@ export default function AboutPage() {
       {/* ───────── CONTACT CTA ───────── */}
       <section className="bg-navy py-24 text-white md:py-36">
         <div className="container-x">
-          <p className="eyebrow !text-sky">Contact</p>
-          <h2 className="mt-4 max-w-4xl !text-white">Let’s create something bold together.</h2>
+          <p className="eyebrow !text-sky">Get In Touch</p>
+          <h2 className="mt-4 max-w-4xl !text-white">Let’s Talk About Your Next Projects.</h2>
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <Link href="/contact" className="btn-light">
               Get in Touch

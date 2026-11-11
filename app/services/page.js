@@ -3,16 +3,19 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Services — Md Ayub Mondol',
   description:
-    'Brand identity design, AI-powered creative and AI art, UI/UX design, motion graphics, social media banners, and SEO & digital marketing by Md Ayub Mondol.',
+    'Brand identity design, AI-powered creative, graphic design, motion graphics design, video editing & production, and AI video production by Md Ayub Mondol.',
 };
 
+// Real services from mdayubmondol.com — titles + one-liners verbatim.
+// The "What's included" / "Deliverables" lists describe what each service
+// typically covers; they are supporting detail, not client claims.
 const services = [
   {
     id: 'brand-identity-design',
     title: 'Brand Identity Design',
-    tagline: 'Identities that are instantly recognisable',
+    tagline: 'Building memorable and distinctive brand identities.',
     description:
-      'From the first sketch of a logo to the guidelines that keep every touchpoint consistent, I build identity systems that help a brand look clear, confident and memorable.',
+      'Building memorable and distinctive brand identities — logos, colour systems and guidelines that make a brand instantly recognisable.',
     included: [
       'Logo concepts, refinement and final artwork',
       'Colour palette and typography selection',
@@ -27,13 +30,13 @@ const services = [
     ],
   },
   {
-    id: 'ai-powered-creative-ai-art',
-    title: 'AI-Powered Creative / AI Art',
-    tagline: 'Veo, AI images & prompt craft',
+    id: 'ai-powered-creative',
+    title: 'AI-Powered Creative',
+    tagline: 'Transforming ideas into AI-generated visuals.',
     description:
-      'Cinematic AI video and AI-generated imagery, guided by careful prompt writing and finished with a designer’s eye so the result feels directed, not random.',
+      'Transforming ideas into AI-generated visuals — cinematic AI imagery guided by careful prompt writing and finished with a designer’s eye.',
     included: [
-      'Prompt writing and refinement for AI video (Veo) and AI images',
+      'Prompt writing and refinement for AI images and video',
       'AI image generation and enhancement',
       'Concept and style development for AI-led visuals and campaigns',
       'Finishing and compositing of AI outputs with design tools',
@@ -45,29 +48,29 @@ const services = [
     ],
   },
   {
-    id: 'ui-ux-design',
-    title: 'UI/UX Design',
-    tagline: 'Clean, usable interfaces',
+    id: 'graphic-design',
+    title: 'Graphic Design',
+    tagline: 'Creative visuals that communicate your brand.',
     description:
-      'Interfaces designed in Figma with clear hierarchy, consistent components and a visual style that matches the brand behind them.',
+      'Creative visuals that communicate your brand — posters, banners and print-ready graphics built with clear hierarchy and strong type.',
     included: [
-      'Wireframes and layout exploration',
-      'Visual UI for web and mobile screens',
-      'Consistent components, spacing and type styles',
-      'Icon design for web and mobile',
+      'Poster and banner design for print and digital',
+      'Social media post and campaign creatives',
+      'Print layouts: flyers, brochures, billboards and packaging',
+      'Consistent visual style across every piece',
     ],
     deliverables: [
-      'Figma design files',
-      'Exported assets and icons',
-      'Style notes for hand-off to development',
+      'Export-ready images for each platform and print size',
+      'Resized variants for different formats',
+      'Editable source files on request',
     ],
   },
   {
-    id: 'motion-graphics',
-    title: 'Motion Graphics',
-    tagline: 'Stories in motion',
+    id: 'motion-graphics-design',
+    title: 'Motion Graphics Design',
+    tagline: 'Dynamic storytelling through motion graphics.',
     description:
-      'Animated graphics and edited video that bring campaigns, lessons and announcements to life, paced so the message lands.',
+      'Dynamic storytelling through motion graphics — animated visuals and edits that bring campaigns and stories to life.',
     included: [
       'Animated graphics and typography',
       'Reel and short-form video editing',
@@ -81,39 +84,39 @@ const services = [
     ],
   },
   {
-    id: 'social-media-banners',
-    title: 'Social Media Banners',
-    tagline: 'Posts and banners that stop the scroll',
+    id: 'video-editing-production',
+    title: 'Video Editing & Production',
+    tagline: 'Engaging videos crafted for digital platforms.',
     description:
-      'Eye-catching posts, banners and campaign series built to look consistent across platforms and to communicate the message in a glance.',
+      'Engaging videos crafted for digital platforms — edited, paced and finished so the message lands in the first few seconds.',
     included: [
-      'Post and banner design for each platform',
-      'Event, awareness and campaign creatives, including posters',
-      'Matching series so a feed looks cohesive',
-      'Sizing and safe areas for every placement',
+      'Video editing for reels, ads and long-form content',
+      'Sound, captions and colour finishing',
+      'Cuts and pacing matched to each platform',
+      'Thumbnails and cover frames for every video',
     ],
     deliverables: [
-      'Export-ready images for each platform',
-      'Resized variants for different formats',
-      'Editable source files on request',
+      'Final video exports in the formats you need',
+      'Platform-specific cuts and aspect ratios',
+      'Editable project files on request',
     ],
   },
   {
-    id: 'seo-digital-marketing',
-    title: 'SEO & Digital Marketing',
-    tagline: 'Be found, then be remembered',
+    id: 'ai-video-production',
+    title: 'AI Video Production',
+    tagline: 'Bringing creative concepts to life with AI.',
     description:
-      'Search-friendly content and digital marketing support that helps the right audience find your brand, backed by consistent visuals across every channel.',
+      'Bringing creative concepts to life with AI — cinematic AI video, from concept and prompts to a finished, directed result.',
     included: [
-      'Keyword-informed titles, descriptions and headings',
-      'Blog and content planning around what your audience searches for',
-      'Campaign creatives for digital marketing',
-      'Consistent visuals and messaging across channels',
+      'Concept and storyboard for AI-led video',
+      'Prompt writing and refinement for AI video (Veo)',
+      'Scene assembly, pacing and finishing with design tools',
+      'Formats prepared for social, web and broadcast',
     ],
     deliverables: [
-      'Optimised titles and descriptions for your pages and posts',
-      'Content outlines for blogs and landing pages',
-      'Campaign creative sets in channel-ready sizes',
+      'Final AI video in the formats you need',
+      'The prompts used, so results can be reproduced',
+      'Short reels and campaign cuts on request',
     ],
   },
 ];
@@ -132,13 +135,14 @@ export default function ServicesPage() {
           className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-sky/20 blur-3xl"
         />
         <div className="container-x relative pb-16 pt-14 md:pb-24 md:pt-20 lg:pt-28">
-          <p className="eyebrow">Services</p>
+          <p className="eyebrow">Popular Services</p>
           <h1 className="mt-6 max-w-5xl">
-            Six ways I can <span className="text-sky-500">bring your idea to life.</span>
+            My Special Services For <span className="text-sky-500">Your Business Growth.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-navy-900/75 md:text-lg">
-            Brand identity, AI-powered creative, UI/UX, motion graphics, social media banners and
-            SEO &amp; digital marketing — all designed with the same care for clarity and detail.
+            Brand identity, AI-powered creative, graphic design, motion graphics, video
+            editing &amp; production and AI video production — all designed with the same
+            care for clarity and detail.
           </p>
 
           <nav aria-label="Jump to a service" className="mt-10 flex flex-wrap gap-3">

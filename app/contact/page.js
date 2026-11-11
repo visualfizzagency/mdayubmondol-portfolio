@@ -85,13 +85,30 @@ export default function ContactPage() {
           className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-sky/20 blur-3xl"
         />
         <div className="container-x relative pb-10 pt-14 md:pb-14 md:pt-20 lg:pt-28">
-          <p className="eyebrow">Contact</p>
+          <p className="eyebrow">Get In Touch</p>
           <h1 className="mt-6 max-w-5xl">
-            Let’s create something <span className="text-sky-500">bold.</span>
+            Let’s Talk About <span className="text-sky-500">Your Next Projects.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-navy-900/75 md:text-lg">
-            Tell me about your project and I’ll get back to you.
+            Have a creative idea or a project in mind? I’m always open to discussing new
+            opportunities, creative collaborations, and exciting projects. Let’s turn your
+            vision into reality.
           </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {[
+              '7+ Years of Experience',
+              'Worked With 100+ Brands',
+              'Creative & AI-Powered Solutions',
+              'Professional Design Support',
+            ].map((chip) => (
+              <span
+                key={chip}
+                className="rounded-full border border-navy/15 px-4 py-2 text-sm font-medium text-navy/80"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -145,10 +162,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <dt className="text-xs font-semibold uppercase tracking-wider text-navy-900/50">
-                    Based in
+                    Main Office
                   </dt>
                   <dd className="mt-2 text-xl font-semibold text-navy md:text-2xl">
-                    Dhaka, Bangladesh
+                    Kaderabad Housing, Mohammadpur, Dhaka, Bangladesh
                   </dd>
                 </div>
               </dl>

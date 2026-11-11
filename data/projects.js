@@ -1,6 +1,12 @@
 // Portfolio projects.
 // Contract used by app/page.js: slug, title, category, year, featured.
+// Optional: cover (image URL), behanceId (Behance gallery ID — used by the
+// Behance auto-sync in lib/behance.js to enrich covers + links),
+// behanceUrl, description (added at runtime by the Behance merge).
 // The homepage shows entries with `featured: true`, in this array order.
+// Covers: Behance projects get their cover from the Behance RSS feed at
+// runtime (808px variant); the 15 WordPress portfolio items carry a static
+// cover from mdayubmondol.com (first content image of each item).
 
 export const projects = [
   // ───────── Featured (homepage) ─────────
@@ -10,6 +16,8 @@ export const projects = [
     category: 'Poster Design',
     year: 2025,
     featured: true,
+    behanceId: 250658769,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2026/06/match-day-poster.jpg',
   },
   {
     slug: 'creative-smartphone-advertisement-poster',
@@ -17,6 +25,7 @@ export const projects = [
     category: 'Advertisement',
     year: 2025,
     featured: true,
+    behanceId: 256445097,
   },
   {
     slug: 'fifa-world-cup-2026-match-fixtures',
@@ -24,6 +33,7 @@ export const projects = [
     category: 'Sports',
     year: 2026,
     featured: true,
+    behanceId: 250870757,
   },
   {
     slug: 'helio-billboard-design',
@@ -31,6 +41,7 @@ export const projects = [
     category: 'Billboard',
     year: 2026,
     featured: true,
+    behanceId: 248730655,
   },
   {
     slug: 'bangladesh-national-football-team-campaign',
@@ -38,6 +49,7 @@ export const projects = [
     category: 'Campaign',
     year: 2025,
     featured: true,
+    behanceId: 241176295,
   },
   {
     slug: 'movie-poster-design',
@@ -45,6 +57,7 @@ export const projects = [
     category: 'Poster Design',
     year: 2024,
     featured: true,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2025/01/Movie-Poster-Design.webp',
   },
 
   // ───────── More work ─────────
@@ -54,6 +67,7 @@ export const projects = [
     category: 'Advertisement',
     year: 2025,
     featured: false,
+    behanceId: 252327431,
   },
   {
     slug: 'bike-creative-social-media-post-ads-creative-banner',
@@ -61,6 +75,7 @@ export const projects = [
     category: 'Social Media',
     year: 2024,
     featured: false,
+    behanceId: 250701061,
   },
   {
     slug: 'mobile-phone-social-media-post-design',
@@ -68,6 +83,7 @@ export const projects = [
     category: 'Social Media',
     year: 2025,
     featured: false,
+    behanceId: 247509035,
   },
   {
     slug: 'educational-reels-editing-portfolio-study-abroad',
@@ -75,6 +91,7 @@ export const projects = [
     category: 'Motion Graphics',
     year: 2025,
     featured: false,
+    behanceId: 246670821,
   },
   {
     slug: 'global-horizons-study-abroad-branding-reel-series',
@@ -82,6 +99,7 @@ export const projects = [
     category: 'Branding',
     year: 2025,
     featured: false,
+    behanceId: 245523325,
   },
   {
     slug: 'womens-day-social-media-banner',
@@ -89,6 +107,7 @@ export const projects = [
     category: 'Social Media',
     year: 2025,
     featured: false,
+    behanceId: 245397077,
   },
   {
     slug: 'thirty-first-night-no-noise-pollution-typography',
@@ -96,6 +115,7 @@ export const projects = [
     category: 'Typography',
     year: 2024,
     featured: false,
+    behanceId: 240043843,
   },
   {
     slug: 'australia-education-expo-2025-study-abroad',
@@ -110,6 +130,7 @@ export const projects = [
     category: 'Education',
     year: 2024,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2025/07/Social-Media-Post-Design-for-Educational-Content.jpg',
   },
   {
     slug: 'allora-bd-mini-truck-branding-design-case-study',
@@ -117,6 +138,7 @@ export const projects = [
     category: 'Branding',
     year: 2024,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/06/Mockup-1-1-scaled.jpg',
   },
   {
     slug: 'study-abroad-social-media-post-design',
@@ -124,6 +146,7 @@ export const projects = [
     category: 'Education',
     year: 2024,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/03/Study-Abroad-Social-Media-Post-Design.jpg',
   },
   {
     slug: 'if-today-is-the-last-day-of-my-life-bangla-typography',
@@ -131,6 +154,7 @@ export const projects = [
     category: 'Typography',
     year: 2024,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/04/jodi-aj-e-ses-din-hoy-pc.png',
   },
   {
     slug: 'success-of-global-marketplace-motion-graphic-dgen-academy',
@@ -138,6 +162,7 @@ export const projects = [
     category: 'Motion Graphics',
     year: 2024,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/02/Success-of-Global-Marketplace-Motion-Graphic-for-DGen-Academy.jpg',
   },
   {
     slug: 'typography-inspired-by-love-and-spring',
@@ -145,6 +170,7 @@ export const projects = [
     category: 'Typography',
     year: 2024,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/02/basonto.webp',
   },
   {
     slug: 'dgen-academy-notepad-design',
@@ -152,6 +178,7 @@ export const projects = [
     category: 'Branding',
     year: 2024,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/01/01_Notepad_closed_view1-scaled.webp',
   },
   {
     slug: 'international-mother-language-day-banner-design',
@@ -159,6 +186,7 @@ export const projects = [
     category: 'Social Media',
     year: 2025,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/01/International-Mother-Language-Day-Banner-Design-1.jpg',
   },
   {
     slug: 'redbull-can-manipulation-post-design',
@@ -166,6 +194,7 @@ export const projects = [
     category: 'Advertisement',
     year: 2023,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/01/Redbull-Can4-scaled.jpg',
   },
   {
     slug: 'shopping-paper-bag-design',
@@ -173,6 +202,7 @@ export const projects = [
     category: 'Branding',
     year: 2023,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/01/Shopping-Paper-Bag-Design-scaled.jpg',
   },
   {
     slug: 'education-social-media-post-design',
@@ -180,6 +210,7 @@ export const projects = [
     category: 'Education',
     year: 2024,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2023/12/Screenshot_1.jpg',
   },
   {
     slug: 'game-leaderboard-ui-design',
@@ -187,6 +218,7 @@ export const projects = [
     category: 'UI Design',
     year: 2023,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2023/12/Leaderboard-Cover.jpg',
   },
   {
     slug: 'study-abroad',
@@ -194,6 +226,7 @@ export const projects = [
     category: 'Social Media',
     year: 2026,
     featured: false,
+    cover: 'https://mdayubmondol.com/wp-content/uploads/2024/04/Study-Abroad-Social-Media-Post-Design-1-scaled.jpg',
   },
 ];
 
