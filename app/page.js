@@ -20,37 +20,37 @@ const services = [
   {
     id: 'brand-identity-design',
     title: 'Brand Identity Design',
-    text: 'Building memorable and distinctive brand identities.',
+    text: 'Distinctive brand identities, from logo to guidelines.',
     tags: ['Logo', 'Guidelines', 'Identity Systems'],
   },
   {
     id: 'ai-powered-creative',
     title: 'AI-Powered Creative',
-    text: 'Transforming ideas into AI-generated visuals.',
+    text: 'AI-generated visuals, from first idea to finished artwork.',
     tags: ['AI Art', 'Prompt Craft', 'Cinematic AI'],
   },
   {
     id: 'graphic-design',
     title: 'Graphic Design',
-    text: 'Creative visuals that communicate your brand.',
+    text: 'Posters, social media and print design that communicate your brand clearly.',
     tags: ['Posters', 'Social', 'Print'],
   },
   {
     id: 'motion-graphics-design',
     title: 'Motion Graphics Design',
-    text: 'Dynamic storytelling through motion graphics.',
+    text: 'Animated stories for social media, web and campaigns.',
     tags: ['Reels', 'Animation', 'Explainer'],
   },
   {
     id: 'video-editing-production',
     title: 'Video Editing & Production',
-    text: 'Engaging videos crafted for digital platforms.',
+    text: 'Polished, engaging video made for digital platforms.',
     tags: ['Editing', 'Reels', 'Short-form'],
   },
   {
     id: 'ai-video-production',
     title: 'AI Video Production',
-    text: 'Bringing creative concepts to life with AI.',
+    text: 'AI-powered video that brings creative concepts to life.',
     tags: ['Veo', 'AI Video', 'Campaigns'],
   },
 ];
@@ -184,9 +184,9 @@ export default async function HomePage() {
 
   // Real stats from mdayubmondol.com.
   const stats = [
-    { value: '7+', label: 'Years Of Experience' },
-    { value: '6K+', label: 'Project Complete' },
-    { value: '95%', label: 'Client Satisfactions' },
+    { value: '7+', label: 'Years of Experience' },
+    { value: '6K+', label: 'Projects Completed' },
+    { value: '95%', label: 'Client Satisfaction' },
   ];
 
   const [featuredQuote, ...otherQuotes] = [
@@ -199,32 +199,30 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* ───────── (a) HERO — dark, name-led ───────── */}
-      <section className="relative overflow-hidden bg-navy-900 text-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-sky/25 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-48 -left-32 h-[28rem] w-[28rem] rounded-full bg-navy/60 blur-3xl"
-        />
-        <div className="container-x relative pb-16 pt-14 md:pb-24 md:pt-20 lg:pt-24">
-          <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-7">
+      {/* ───────── (a) HERO — dark, name-led, portrait grounded on the stats line ───────── */}
+      <section className="relative isolate overflow-hidden bg-navy-900 text-white">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -right-24 top-0 h-[38rem] w-[38rem] rounded-full bg-sky/20 blur-3xl" />
+          <div className="absolute -bottom-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-navy/70 blur-3xl" />
+        </div>
+
+        <div className="container-x">
+          <div className="grid items-end lg:grid-cols-12 lg:gap-6">
+            {/* Copy */}
+            <div className="relative z-10 pb-12 pt-14 md:pt-20 lg:col-span-7 lg:pb-24 lg:pt-24">
               <p className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-medium text-white/80">
                 <span className="animate-pulse-dot h-2 w-2 rounded-full bg-sky" />
-                Available for projects — Sr. Visualizer, Edison Group (Symphony, Helio)
+                Available for new projects
               </p>
               <p className="animate-fade-up eyebrow mt-8 !text-sky" style={{ animationDelay: '80ms' }}>
-                Hello, I’m — Dhaka, Bangladesh
+                Graphic Designer &amp; AI Artist — Dhaka, Bangladesh
               </p>
               <h1
                 className="animate-fade-up mt-5 !text-white"
                 style={{
                   animationDelay: '160ms',
-                  fontSize: 'clamp(3.5rem, 9.5vw, 8.25rem)',
-                  lineHeight: 0.95,
+                  fontSize: 'clamp(3.25rem, 9vw, 8.5rem)',
+                  lineHeight: 0.94,
                 }}
               >
                 MD AYUB
@@ -232,26 +230,26 @@ export default async function HomePage() {
                 <span className="text-stroke">MONDOL</span>
               </h1>
               <p
-                className="animate-fade-up display mt-6 text-2xl text-sky md:text-4xl"
+                className="animate-fade-up display mt-6 text-xl text-white md:text-3xl"
                 style={{ animationDelay: '240ms' }}
               >
-                Creative Designer &amp; AI Artist
+                Sr. Visualizer at <span className="text-sky">Edison Group</span>
+                <span className="text-white/60"> (Symphony, Helio)</span>
               </p>
               <p
-                className="animate-fade-up mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg"
+                className="animate-fade-up mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg"
                 style={{ animationDelay: '320ms' }}
               >
-                Creative professional with 7+ years of experience in Graphic Design, Brand
-                Identity, Motion Graphics, Video Editing, and AI-Powered Visual Creation. I
-                turn ideas into compelling visuals through creativity, technology, and
-                purposeful design.
+                I design brand identities, campaigns and motion graphics, and create
+                AI-powered visuals. With 7+ years of experience and 100+ brands served, I turn
+                ideas into clear, purposeful design.
               </p>
               <div
                 className="animate-fade-up mt-10 flex flex-col gap-4 sm:flex-row"
                 style={{ animationDelay: '400ms' }}
               >
                 <a href={`mailto:${EMAIL}`} className="btn-sky">
-                  Hire Me
+                  Start a Project
                 </a>
                 <a href="#work" className="btn-outline-light">
                   View Selected Work ↓
@@ -259,41 +257,35 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none">
+            {/* Portrait — stands directly on the line above the stats */}
+            <div className="relative mx-auto aspect-square w-full max-w-md lg:col-span-5 lg:aspect-[4/5] lg:max-w-none">
               <div
-                className="animate-fade-up relative aspect-[4/5] w-full overflow-hidden rounded-b-[2.5rem] rounded-t-[999px] border border-white/10 bg-gradient-to-b from-navy-700 via-navy-800 to-navy-900 shadow-2xl shadow-black/40"
-                style={{ animationDelay: '200ms' }}
-              >
-                <div
-                  aria-hidden="true"
-                  className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sky/30 blur-2xl"
-                />
+                aria-hidden="true"
+                className="absolute left-1/2 top-[8%] aspect-square w-[84%] -translate-x-1/2 rounded-full bg-gradient-to-b from-sky/35 via-sky/10 to-transparent"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute left-1/2 top-[8%] aspect-square w-[84%] -translate-x-1/2 rounded-full border border-white/10"
+              />
+              <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 lg:w-[115%] xl:w-[125%]">
                 <Image
-                  src="/images/portrait-cutout.png"
-                  alt="Md Ayub Mondol — portrait, background removed"
-                  fill
+                  src="/images/ayub02-site-cutout.png"
+                  alt="Md Ayub Mondol"
+                  width={768}
+                  height={768}
                   priority
-                  sizes="(min-width: 1024px) 40vw, (min-width: 640px) 384px, 90vw"
-                  className="object-contain object-bottom"
+                  sizes="(min-width: 1280px) 40vw, (min-width: 1024px) 45vw, 90vw"
+                  className="animate-fade-up h-auto w-full"
+                  style={{ animationDelay: '200ms' }}
                 />
-              </div>
-              <div className="absolute -left-2 top-32 z-10 rounded-2xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur-md md:-left-4">
-                <p className="display text-2xl text-white">7+</p>
-                <p className="mono text-[10px] uppercase tracking-[0.18em] text-white/70">
-                  Years Experience
-                </p>
-              </div>
-              <div className="absolute -right-2 bottom-10 z-10 rounded-2xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur-md md:-right-4">
-                <p className="display text-2xl text-white">100+</p>
-                <p className="mono text-[10px] uppercase tracking-[0.18em] text-white/70">
-                  Brands Worldwide
-                </p>
+                {/* Softens the cropped bottom edge into the page */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-navy-900 to-transparent" />
               </div>
             </div>
           </div>
 
-          {/* Real stats from his site */}
-          <dl className="mt-16 grid grid-cols-3 gap-4 border-t border-white/10 pt-8 md:mt-24 md:pt-10">
+          {/* Stats */}
+          <dl className="grid grid-cols-3 gap-4 border-t border-white/10 pb-16 pt-8 md:pb-20 md:pt-10">
             {stats.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>
@@ -339,9 +331,9 @@ export default async function HomePage() {
       <section className="bg-navy-900 py-16 text-white md:py-24">
         <div className="container-x">
           <div className="text-center">
-            <p className="eyebrow !text-sky">I’ve Worked With</p>
+            <p className="eyebrow !text-sky">Trusted by</p>
             <h2 className="mx-auto mt-4 max-w-3xl !text-white">
-              100+ Brands &amp; Businesses Worldwide
+              100+ brands and businesses worldwide.
             </h2>
           </div>
           <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-7 md:mt-16 md:gap-x-12 md:gap-y-9">
@@ -383,7 +375,7 @@ export default async function HomePage() {
           </div>
 
           <p className="mt-10 text-center text-sm text-white/50">
-            New Behance projects appear here automatically — within an hour of publishing.{' '}
+            New Behance projects appear here automatically, usually within an hour of publishing.{' '}
             <a
               href={BEHANCE_URL}
               target="_blank"
@@ -401,9 +393,9 @@ export default async function HomePage() {
         <div className="container-x">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="eyebrow !text-sky">Popular Services</p>
+              <p className="eyebrow !text-sky">Services</p>
               <h2 className="mt-4 max-w-3xl !text-white">
-                My Special Services For Your Business Growth.
+                Creative services built to grow your brand.
               </h2>
             </div>
             <Link
@@ -467,11 +459,11 @@ export default async function HomePage() {
       {/* ───────── (f) TESTIMONIALS — real quotes only ───────── */}
       <section id="testimonials" className="bg-white py-20 md:py-32">
         <div className="container-x">
-          <p className="eyebrow">Clients Testimonials</p>
-          <h2 className="mt-4 max-w-3xl">Trusted by Brands. Appreciated by Clients.</h2>
+          <p className="eyebrow">Client testimonials</p>
+          <h2 className="mt-4 max-w-3xl">Trusted by brands. Valued by clients.</h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-navy-900/70 md:text-lg">
-            Building creative partnerships through quality work, clear communication, and
-            reliable delivery. Here’s what clients say about working with me.
+            Quality work, clear communication and reliable delivery. Here is what clients say
+            about working with me.
           </p>
 
           {/* Featured quote */}
@@ -518,7 +510,7 @@ export default async function HomePage() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">Journal</p>
-              <h2 className="mt-4">Latest blogs.</h2>
+              <h2 className="mt-4">Latest from the blog.</h2>
             </div>
             <Link href="/blog" className="btn-outline self-start md:self-auto">
               All posts →
@@ -551,20 +543,19 @@ export default async function HomePage() {
       {/* ───────── (h) CONTACT CTA ───────── */}
       <section id="contact" className="bg-navy py-24 text-white md:py-36">
         <div className="container-x">
-          <p className="eyebrow !text-sky">Get In Touch</p>
-          <h2 className="mt-4 max-w-4xl !text-white">Let’s Talk About Your Next Projects.</h2>
+          <p className="eyebrow !text-sky">Get in touch</p>
+          <h2 className="mt-4 max-w-4xl !text-white">Let’s talk about your next project.</h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-            Have a creative idea or a project in mind? I’m always open to discussing new
-            opportunities, creative collaborations, and exciting projects. Let’s turn your
-            vision into reality.
+            Have an idea or a project in mind? I’m open to new work and creative
+            collaborations. Tell me what you’re building and let’s make it real.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
             {[
-              '7+ Years of Experience',
-              'Worked With 100+ Brands',
-              'Creative & AI-Powered Solutions',
-              'Professional Design Support',
+              '7+ years of experience',
+              '100+ brands worldwide',
+              'Creative and AI-powered solutions',
+              'Professional design support',
             ].map((chip) => (
               <span
                 key={chip}
@@ -606,7 +597,7 @@ export default async function HomePage() {
               </a>
             </div>
             <div>
-              <p className="text-sm uppercase tracking-wider text-white/50">Main Office</p>
+              <p className="text-sm uppercase tracking-wider text-white/50">Office</p>
               <p className="mt-2 text-lg font-medium md:text-xl">{OFFICE}</p>
             </div>
           </div>

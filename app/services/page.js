@@ -3,19 +3,19 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Services — Md Ayub Mondol',
   description:
-    'Brand identity design, AI-powered creative, graphic design, motion graphics design, video editing & production, and AI video production by Md Ayub Mondol.',
+    'Services from Md Ayub Mondol: brand identity design, AI-powered creative, graphic design, motion graphics, video editing and production, and AI video production.',
 };
 
-// Real services from mdayubmondol.com — titles + one-liners verbatim.
+// Service titles are the real ones from mdayubmondol.com (kept so /services#id anchors stay stable).
 // The "What's included" / "Deliverables" lists describe what each service
 // typically covers; they are supporting detail, not client claims.
 const services = [
   {
     id: 'brand-identity-design',
     title: 'Brand Identity Design',
-    tagline: 'Building memorable and distinctive brand identities.',
+    tagline: 'Distinctive brand identities',
     description:
-      'Building memorable and distinctive brand identities — logos, colour systems and guidelines that make a brand instantly recognisable.',
+      'Logos, colour systems and guidelines that make a brand instantly recognisable, and consistent wherever it appears.',
     included: [
       'Logo concepts, refinement and final artwork',
       'Colour palette and typography selection',
@@ -32,9 +32,9 @@ const services = [
   {
     id: 'ai-powered-creative',
     title: 'AI-Powered Creative',
-    tagline: 'Transforming ideas into AI-generated visuals.',
+    tagline: 'AI-generated visuals',
     description:
-      'Transforming ideas into AI-generated visuals — cinematic AI imagery guided by careful prompt writing and finished with a designer’s eye.',
+      'Cinematic AI imagery guided by careful prompt writing and finished with a designer’s eye, so the result feels directed rather than random.',
     included: [
       'Prompt writing and refinement for AI images and video',
       'AI image generation and enhancement',
@@ -50,9 +50,9 @@ const services = [
   {
     id: 'graphic-design',
     title: 'Graphic Design',
-    tagline: 'Creative visuals that communicate your brand.',
+    tagline: 'Posters, social and print',
     description:
-      'Creative visuals that communicate your brand — posters, banners and print-ready graphics built with clear hierarchy and strong type.',
+      'Posters, banners and print-ready graphics built on clear hierarchy and strong typography, designed to communicate your brand at a glance.',
     included: [
       'Poster and banner design for print and digital',
       'Social media post and campaign creatives',
@@ -68,9 +68,9 @@ const services = [
   {
     id: 'motion-graphics-design',
     title: 'Motion Graphics Design',
-    tagline: 'Dynamic storytelling through motion graphics.',
+    tagline: 'Animated storytelling',
     description:
-      'Dynamic storytelling through motion graphics — animated visuals and edits that bring campaigns and stories to life.',
+      'Animated graphics and edits that bring campaigns and stories to life, paced so the message lands.',
     included: [
       'Animated graphics and typography',
       'Reel and short-form video editing',
@@ -86,9 +86,9 @@ const services = [
   {
     id: 'video-editing-production',
     title: 'Video Editing & Production',
-    tagline: 'Engaging videos crafted for digital platforms.',
+    tagline: 'Polished digital video',
     description:
-      'Engaging videos crafted for digital platforms — edited, paced and finished so the message lands in the first few seconds.',
+      'Videos edited, paced and finished for digital platforms, so the message lands in the first few seconds.',
     included: [
       'Video editing for reels, ads and long-form content',
       'Sound, captions and colour finishing',
@@ -104,14 +104,14 @@ const services = [
   {
     id: 'ai-video-production',
     title: 'AI Video Production',
-    tagline: 'Bringing creative concepts to life with AI.',
+    tagline: 'AI-powered video',
     description:
-      'Bringing creative concepts to life with AI — cinematic AI video, from concept and prompts to a finished, directed result.',
+      'Cinematic AI video, from concept and prompts to a finished, directed result.',
     included: [
       'Concept and storyboard for AI-led video',
       'Prompt writing and refinement for AI video (Veo)',
       'Scene assembly, pacing and finishing with design tools',
-      'Formats prepared for social, web and broadcast',
+      'Formats prepared for social and web',
     ],
     deliverables: [
       'Final AI video in the formats you need',
@@ -135,14 +135,14 @@ export default function ServicesPage() {
           className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-sky/20 blur-3xl"
         />
         <div className="container-x relative pb-16 pt-14 md:pb-24 md:pt-20 lg:pt-28">
-          <p className="eyebrow">Popular Services</p>
+          <p className="eyebrow">Services</p>
           <h1 className="mt-6 max-w-5xl">
-            My Special Services For <span className="text-sky-500">Your Business Growth.</span>
+            Creative services built to <span className="text-sky-500">grow your brand.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-navy-900/75 md:text-lg">
             Brand identity, AI-powered creative, graphic design, motion graphics, video
-            editing &amp; production and AI video production — all designed with the same
-            care for clarity and detail.
+            editing and production, and AI video production. Each one gets the same focus on
+            clarity and detail.
           </p>
 
           <nav aria-label="Jump to a service" className="mt-10 flex flex-wrap gap-3">
@@ -236,7 +236,7 @@ export default function ServicesPage() {
           <p className="eyebrow !text-sky">Contact</p>
           <h2 className="mt-4 max-w-4xl !text-white">Have a project in mind?</h2>
           <p className="mt-6 max-w-xl text-white/70">
-            Tell me what you’re building and we’ll take it from there.
+            Tell me what you’re building and let’s take it from there.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link href="/contact" className="btn-light">

@@ -8,7 +8,7 @@ export const revalidate = 60;
 export const metadata = {
   title: 'Work — Md Ayub Mondol',
   description:
-    'Selected work by Md Ayub Mondol — brand identity, AI art, posters, social media, motion graphics and UI design. Synced from Behance.',
+    'Selected work by Md Ayub Mondol: brand identity, AI art, posters, social media, motion graphics and UI design.',
 };
 
 const BEHANCE_URL = 'https://www.behance.net/mdayubmondol0';
@@ -32,8 +32,8 @@ export default async function WorkPage() {
             Selected <span className="text-sky">work.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-            {projects.length} projects across branding, posters, social media, motion and
-            UI — synced from Behance, so new work appears here automatically.
+            {projects.length} projects across branding, posters, social media, motion
+            graphics and UI. New work from Behance appears here automatically.
           </p>
         </div>
       </section>
@@ -43,8 +43,8 @@ export default async function WorkPage() {
         <div className="container-x">
           <WorkGrid projects={projects} />
           <p className="mt-12 text-center text-sm text-white/50">
-            Synced from Behance — new projects appear here automatically, within an hour
-            of publishing.{' '}
+            New Behance projects appear here automatically, usually within an hour of
+            publishing.{' '}
             <a
               href={BEHANCE_URL}
               target="_blank"

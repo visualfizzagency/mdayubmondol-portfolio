@@ -85,21 +85,20 @@ export default function ContactPage() {
           className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-sky/20 blur-3xl"
         />
         <div className="container-x relative pb-10 pt-14 md:pb-14 md:pt-20 lg:pt-28">
-          <p className="eyebrow">Get In Touch</p>
+          <p className="eyebrow">Get in touch</p>
           <h1 className="mt-6 max-w-5xl">
-            Let’s Talk About <span className="text-sky-500">Your Next Projects.</span>
+            Let’s talk about <span className="text-sky-500">your next project.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-navy-900/75 md:text-lg">
-            Have a creative idea or a project in mind? I’m always open to discussing new
-            opportunities, creative collaborations, and exciting projects. Let’s turn your
-            vision into reality.
+            Have an idea or a project in mind? I’m open to new work and creative
+            collaborations. Tell me what you’re building and let’s make it real.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {[
-              '7+ Years of Experience',
-              'Worked With 100+ Brands',
-              'Creative & AI-Powered Solutions',
-              'Professional Design Support',
+              '7+ years of experience',
+              '100+ brands worldwide',
+              'Creative and AI-powered solutions',
+              'Professional design support',
             ].map((chip) => (
               <span
                 key={chip}
@@ -162,7 +161,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <dt className="text-xs font-semibold uppercase tracking-wider text-navy-900/50">
-                    Main Office
+                    Office
                   </dt>
                   <dd className="mt-2 text-xl font-semibold text-navy md:text-2xl">
                     Kaderabad Housing, Mohammadpur, Dhaka, Bangladesh

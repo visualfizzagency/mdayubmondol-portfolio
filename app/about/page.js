@@ -13,7 +13,7 @@ const PHONE = '01886588884';
 // Real experience timeline from mdayubmondol.com.
 const experience = [
   { period: '2026 — Present', role: 'Sr. Visualizer', company: 'Edison Group', note: 'Symphony, Helio' },
-  { period: '2023 — 2026', role: 'Sr. Visualizer', company: 'NexGen Global Group', note: '' },
+  { period: '2023 — 2026', role: 'Senior Graphic Designer', company: 'NexGen Global Group', note: '' },
   { period: '2022 — 2023', role: 'Visualizer', company: 'AKS Pharmacy', note: '' },
   { period: '2020 — 2022', role: 'Visualizer', company: 'DX360', note: '' },
   { period: '2019 — 2020', role: 'Graphics Designer', company: 'Honda Life', note: '' },
@@ -27,14 +27,14 @@ const focusAreas = [
   'Motion Graphics & Video Editing',
 ];
 
-// Real services from mdayubmondol.com.
+// Same service titles and one-liners as the homepage.
 const services = [
-  { title: 'Brand Identity Design', text: 'Building memorable and distinctive brand identities.' },
-  { title: 'AI-Powered Creative', text: 'Transforming ideas into AI-generated visuals.' },
-  { title: 'Graphic Design', text: 'Creative visuals that communicate your brand.' },
-  { title: 'Motion Graphics Design', text: 'Dynamic storytelling through motion graphics.' },
-  { title: 'Video Editing & Production', text: 'Engaging videos crafted for digital platforms.' },
-  { title: 'AI Video Production', text: 'Bringing creative concepts to life with AI.' },
+  { title: 'Brand Identity Design', text: 'Distinctive brand identities, from logo to guidelines.' },
+  { title: 'AI-Powered Creative', text: 'AI-generated visuals, from first idea to finished artwork.' },
+  { title: 'Graphic Design', text: 'Posters, social media and print design that communicate your brand clearly.' },
+  { title: 'Motion Graphics Design', text: 'Animated stories for social media, web and campaigns.' },
+  { title: 'Video Editing & Production', text: 'Polished, engaging video made for digital platforms.' },
+  { title: 'AI Video Production', text: 'AI-powered video that brings creative concepts to life.' },
 ];
 
 // Real skills from mdayubmondol.com.
@@ -63,14 +63,13 @@ export default function AboutPage() {
             <div className="lg:col-span-7">
               <p className="eyebrow !text-sky">About me — Dhaka, Bangladesh</p>
               <h1 className="mt-6 !text-white">
-                Creative Ideas. <span className="text-sky">Powerful Visual Solutions.</span>
+                Creative ideas. <span className="text-sky">Powerful visual solutions.</span>
               </h1>
               <p className="mt-8 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
                 With 7+ years of experience in the creative industry, I help brands bring
-                their ideas to life through impactful design and innovative visual
-                storytelling. From building distinctive brand identities to creating
-                AI-powered visuals, motion graphics, and engaging video content, I combine
-                creativity and technology to deliver meaningful results.
+                their ideas to life through impactful design and visual storytelling. From
+                distinctive brand identities to AI-powered visuals, motion graphics and
+                video, I combine creativity and technology to deliver results that matter.
               </p>
               <ul className="mt-8 grid max-w-xl gap-3 sm:grid-cols-2">
                 {focusAreas.map((f) => (
@@ -83,7 +82,7 @@ export default function AboutPage() {
               <div className="mt-10 flex flex-col gap-2 text-white/80 sm:flex-row sm:gap-10">
                 <p>
                   <span className="mono text-xs uppercase tracking-[0.18em] text-white/50">
-                    Email Us
+                    Email
                   </span>
                   <br />
                   <a href={`mailto:${EMAIL}`} className="font-semibold text-white transition-colors hover:text-sky">
@@ -92,7 +91,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   <span className="mono text-xs uppercase tracking-[0.18em] text-white/50">
-                    Make A Call
+                    Call
                   </span>
                   <br />
                   <a href={`tel:${PHONE}`} className="font-semibold text-white transition-colors hover:text-sky">
@@ -134,11 +133,11 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="eyebrow">My Resume</p>
-              <h2 className="mt-4">Real Creative Experience.</h2>
+              <p className="eyebrow">Experience</p>
+              <h2 className="mt-4">7+ years of creative work.</h2>
               <p className="mt-6 max-w-sm text-navy-900/70">
-                7+ years across agencies and brands — from graphics design to senior
-                visualisation and AI-powered creative.
+                A career that has grown from graphic design to senior visualisation, and now
+                includes AI-powered creative work.
               </p>
             </div>
 
@@ -168,8 +167,8 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="eyebrow">What I do</p>
-              <h2 className="mt-4">Services.</h2>
+              <p className="eyebrow">Services</p>
+              <h2 className="mt-4">How I can help.</h2>
             </div>
             <Link href="/services" className="btn-outline self-start md:self-auto">
               Service details →
@@ -206,8 +205,8 @@ export default function AboutPage() {
       {/* ───────── CONTACT CTA ───────── */}
       <section className="bg-navy py-24 text-white md:py-36">
         <div className="container-x">
-          <p className="eyebrow !text-sky">Get In Touch</p>
-          <h2 className="mt-4 max-w-4xl !text-white">Let’s Talk About Your Next Projects.</h2>
+          <p className="eyebrow !text-sky">Get in touch</p>
+          <h2 className="mt-4 max-w-4xl !text-white">Let’s talk about your next project.</h2>
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <Link href="/contact" className="btn-light">
               Get in Touch
